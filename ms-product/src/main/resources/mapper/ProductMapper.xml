@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.freud.test.product.mapper.ProductMapper">
+
+	<resultMap id="product" type="com.freud.test.product.bean.Product">
+		<id property="id" jdbcType="INTEGER" column="ID" />
+		<result property="name" jdbcType="VARCHAR" column="NAME" />
+		<result property="description" jdbcType="VARCHAR" column="DESCRIPTION" />
+		<result property="storage" jdbcType="INTEGER" column="STORAGE" />
+	</resultMap>
+
+	<select id="getAllProductByIds" resultMap="product">
+		SELECT
+			ID,
+			NAME,
+			DESCRIPTION,
+			STORAGE
+		FROM PRODUCT
+		WHERE 1=1
+		AND ID = #{id}
+	</select>
+
+	<update id="update">
+		UPDATE PRODUCT
+		SET
+			NAME = #{name},
+			DESCRIPTION = #{description},
+			STORAGE = #{storage}
+		WHERE
+			ID = #{id}
+	</update>	
+
+</mapper>
