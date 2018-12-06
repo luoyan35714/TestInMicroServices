@@ -35,6 +35,12 @@
 		</pluginManagement>
 
 	</build>
-
+	
+	<modules>
+		<module>ms-gateway</module>
+		<module>ms-service</module>
+		<module>ms-product</module>
+		<module>ms-order</module>
+	</modules>
 
 </project>
