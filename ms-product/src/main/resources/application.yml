@@ -4,15 +4,14 @@ server:
 spring: 
   application:
     name: ms-product
-  datasource:
-    platform: MYSQL
+  datasource: 
     driver-class-name: org.hsqldb.jdbcDriver
     url: jdbc:hsqldb:mem:testdb;sql.syntax_ora=true
     username: sa
     password: 
-    schema: classpath:sql/schema.sql
-    data: classpath:sql/data.sql
+#    schema: classpath:sql/schema.sql
+#    data: classpath:sql/data.sql
 
 mybatis: 
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.freud.test
+  type-aliases-package: com.freud.test.product
